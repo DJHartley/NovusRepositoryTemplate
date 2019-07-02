@@ -1,4 +1,18 @@
 #!/bin/bash
+#Copyright 2019 Polar Development.
+
+#Licensed under the Apache License, Version 2.0 (the "License");
+#you may not use this file except in compliance with the License.
+#You may obtain a copy of the License at
+
+#    http://www.apache.org/licenses/LICENSE-2.0
+
+#Unless required by applicable law or agreed to in writing, software
+#distributed under the License is distributed on an "AS IS" BASIS,
+#WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+#See the License for the specific language governing permissions and
+#limitations under the License.
+
 script_full_path=$(dirname "$0")
 DATE=$(date -R -u)
 cd $script_full_path
@@ -8,8 +22,6 @@ rm ./Packages.xz ./Packages.gz ./Release.gpg ./Release
 dpkg-scanpackages -m . > ./Packages
 gzip -c9 -k ./Packages > ./Packages.gz
 xz -c9 -k ./Packages > ./Packages.xz
-
-cd $script_full_path
 
 OUTPUT="Release"
 FILES=(
@@ -62,6 +74,6 @@ generateHash sha512sum ${i}
 echo " ${RETURN}" >> ${OUTPUT}
 done
 
-gpg -abs --default-key F0F27C8758ADE7983CA32739EE6CD017B9244FB1 -o ./Release.gpg ./Release
+gpg -abs --default-key F0F27C8758ADE7983CA32739EE6CD017B9244FB1 -o ./Release.gpg ./Release #Change your key here!
 
 echo "Done updating!"
