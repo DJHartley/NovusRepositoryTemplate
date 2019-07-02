@@ -40,14 +40,30 @@ Getting started for creating your own repository is easy, just follow the instru
 ### Prerequisites
 In order to start creating you own Novus repository is recommened that you have both [MacPT](https://github.com/Official-polar-team/MacPT) and [NovusCLI](https://github.com/Official-polar-team/NovusCLI) installed. 
 
-Is also recommended to have basic Linux utilities like GPG installed on your Mac via [Project Serna](https://sernarepo.com/)
+Is also recommended to have basic Linux utilities like GPG installed on your Mac via [Project Serna](https://sernarepo.com/) to install GPG open your terminal ```Applications ---> Utilities ---> Terminal ``` and type ```nvs install gpg``` after this click enter, you are going to be prompted to type your password, after this everything should be done.
 
-## Building
+### 🔽 Downlaoding
 
-We do call this section building but it's just doing basic configuration.
+In order to be able to manipulate and create your repo you are going to need a special set of utilies that we list below:
 
+* [GitHub Desktop](https://desktop.github.com/)
+* [iTerm 2](https://www.iterm2.com/)
 
+### 🍴 Forking and GitHub setup
 
+In order to create your own repository you are going to need to create to fork to the repo and create a ```.github.io``` website follow this steps (ProTip: Click on bullets to deploy content!):
+
+<details>
+  <summary>Setting up github.io</summary>
+  <p>Navigate to your profile page to do this click on your profile (Upper right corner) after this go to profile ---> Repositories.</p>
+  <p>Create a new repository by clicking on "New" after this select this name structure: yourusername.github.io <--- replace your username with your actual username for example: diegomagdaleno.github.io. And check the box "Initialize this repository with a readme". </p>
+</details>
+<details>
+  <summary>Forking the repository.</summary>
+  <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
+</details>
+
+ 
 ## Installing
 ### Using MacPT
 
