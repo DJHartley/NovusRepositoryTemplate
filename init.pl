@@ -18,6 +18,8 @@ use warnings;
 use strict;
 use Term::ANSIColor;
 
+my @fileChecker;
+
 print color('yellow');
 print "Initializing repository.\n";
 sleep(1);
@@ -35,16 +37,22 @@ print "Deleting example files...\n";
 
 print "Deleting Packages file...\n";
 
-my @Packages = qw( Packages Packages.xz Packages.gz );
+@fileChecker = qw( Packages Packages.xz Packages.gz );
+if ( -e $fileChecker[0] ) {
+    print color('green');
+    print "Deleting files!\n";
+    my @Packages = qw( Packages Packages.xz Packages.gz );
 
-for my $f (@Packages) {
-    system "rm -rf $f";
+    for my $f (@Packages) {
+        system "rm -rf $f";
+    }
+}
+else {
+    print color('bold red');
+    print
+"Warning files does not exist, did you initialized the repository before?\n";
 }
 
-sleep(1);
-print color('bold green');
-
-print "Done deleting Packages File!\n";
 print color('reset');
 
 print "\n";    #Why tho? Well it looks nice on the terminal.
@@ -53,19 +61,28 @@ print color('yellow');
 
 print "Deleting release files...\n";
 
-my @ReleaseFiles = qw( Release Release.gpg );
+@fileChecker = qw( Release Release.gpg );
+if ( -e $fileChecker[0] ) {
+    print color('green');
+    print "Deleting files!\n";
+    my @Packages = qw( Release Release.gpg );
 
-for my $f (@ReleaseFiles) {
-    system "rm -rf $f";
+    for my $f (@Packages) {
+        system "rm -rf $f";
+    }
+}
+else {
+    print color('bold red');
+    print
+"Warning files does not exist, did you initialized the repository before?\n";
+    print color('reset');
 }
 
-sleep(1);
+print "\n";    #Why tho? Well it looks nice on the terminal.
 
-print color('green');
+print color('yellow');
 
-print "Done deleting release files!\n";
-
-print "Deleting and creating new packages folder";
+print "Deleting and creating new packages folder\n";
 
 my @PackagesFolder = qw( ./packages );
 
@@ -76,7 +93,7 @@ for my $f (@PackagesFolder) {
 
 sleep(1);
 
-print "Deleting and creating new depictions folder.";
+print "Deleting and creating new depictions folder.\n";
 
 my @depictionsFolder = qw( ./depictions );
 
@@ -101,16 +118,21 @@ sub prompt_yn {
     return lc($answer) eq 'y';
 }
 
-print "\n";              #Why tho? Well it looks nice on the terminal.
+print color('reset');
+print "\n";    #Why tho? Well it looks nice on the terminal.
 
+print color ('magenta');
 if ( prompt_yn("Are you hosting this on GitHub?") ) {
+    print color('green');
     print "You are done setting up the repository";
 }
 else {
+    print color('green');
     my @userIsNotHostingOnGit = qw( README.md .gitignore LICENSE );
 
     for my $f (@userIsNotHostingOnGit) {
         system "rm -rf $f";
     }
+    print
+"GitHub releated files have been deleted, you may put this files into your web server";
 }
-
