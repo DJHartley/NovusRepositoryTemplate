@@ -4,7 +4,6 @@
 </p>
 
 <h3 align="center">Novus Repository Template.</h3>
-
 <div align="center">
 
   ![Forks](https://img.shields.io/github/issues/Official-polar-team/NovusRepositoryTemplate.svg) 
@@ -40,7 +39,7 @@ Getting started for creating your own repository is easy, just follow the instru
 ### Prerequisites
 In order to start creating you own Novus repository is recommened that you have both [MacPT](https://github.com/Official-polar-team/MacPT) and [NovusCLI](https://github.com/Official-polar-team/NovusCLI) installed. 
 
-Is also recommended to have basic Linux utilities like GPG installed on your Mac via [Project Serna](https://sernarepo.com/) to install GPG open your terminal ```Applications ---> Utilities ---> Terminal ``` and type ```nvs install gpg``` after this click enter, you are going to be prompted to type your password, after this everything should be done.
+Is also recommended to have basic Linux utilities installed on your Mac via [Project Serna](https://sernarepo.com/) to install them open your terminal ```Applications ---> Utilities ---> Terminal ``` and type ```nvs install gpg xz bzip2 perl```  after this click enter, you are going to be prompted to type your password, after this everything should be done.
 
 ### 🔽 Downlaoding
 
@@ -60,29 +59,57 @@ In order to create your own repository you are going to need to create to fork t
 </details>
 <details>
   <summary>Forking the repository.</summary>
-  <p>Content 2 Content 2 Content 2 Content 2 Content 2</p>
+  <p>Once you are done following the steps to get your own repository are simple, in this repository click go to the uper right corner and locate a button that says "Fork" after clicking on it, once you are into the repository go to settings and change the name to whatever you would like it to be.</p>
 </details>
 
- 
-## Installing
-### Using MacPT
 
-* If you have MacPT installed on your machine you just have to make sure you have the Serna repository on your machine. To check run ```sudo apt edit-sources``` and press enter, (If you have a password set on your Mac it will ask you to input your password, when you type it won't show you're typing but you are typing so just type your password and click the enter key) if you get an error it's most likely because you don't have a nano installed, [click here](#building-and-installing-nano) and follow the tutorial to install nano.
-* After entering ```sudo apt edit-sources``` you should see ```deb https://sernarepo.com/macos georgia main``` on it's own line in there. If you don't see it there then add it! To save your changes press the Control + O without the + and then click enter and to exit press Control + X without the +.
-* If you didn't see the repository there and you had to manually add it then type ```sudo apt update``` in your terminal and click enter (If you have a password set on your mac it will ask you to input your password, when you type it won't show you're typing but you are typing so just type your password and click the enter key).
-* Now type ```sudo apt install novuscli```
-* Congratulations! You have successfully installed NovusCLI (nvs)!
+## Configuring your repository
+### Initializing and basic configuration
 
-#### Building and Installing Nano
+* Once you are all done with the steps below open GitHub desktop, there are many ways to do so:
+  * Go to ```Applications —> GitHub desktop```
+  * Press ```cmd + space``` and search GitHub desktop.
+  * Go to launchpad and search for GitHub desktop.
+* Inside of GitHub desktop after doing the configuration of your account, go to your menu bar and click on ```File —> Clone repository``` select the name of the repository that contains your repo.
+* Once is cloned click on the ```Open on Finder``` button.
+* Now is time to open iTerm 2 there are many ways to do so:
+  * Go to ```Applications —> iTerm2```
+  * Press ```cmd + space``` and search for iTerm2
+  * Go to launchpad and search for iTerm2
+* Now inside iTerm2 type ```cd``` and then take and drag and drop the folder where your repository was generated into iTerm2 and press enter
+* Inside you now need to initialize the repository in order to do this inside your repository run ```./init.pl```
+* Now your repository is initialized! Congrats, in the next steps we are going to go into making it actually work!.
 
-* [Click here](https://nano-editor.org/download.php/) to go download the nano source (I recommend the tar.xz one)
-* Go to the folder it was downloaded to (By default it downloads to ~/Downloads but if you changed the directory where files * download then just go there).
-* Extract the nano source you downloaded.
-* Open your terminal
-* Type ```cd``` then drag and drop the folder you extracted and click enter.
-* run ```./configure```.
-* run ```make```.
-* run ```sudo make install```
+#### Making your Novus repository actually your repository
+
+We are almost done with the configuration process but now we need to do a little more of stuff to get the repository to:
+
+* Contain our name and icons.
+* Contain our packages.
+* Be signed with a unique GPG key.
+
+The following steps help us to achieve that things:
+
+* To get your own icon create an image of 512 x 512 it can be whatever you want, we don't have any guidelines for icons. Make sure to name it ```RepoIcon.png```.
+
+* In order to make release file (Our own name) we need to configure ```update.pl``` 
+
+* To achieve this go into the folder your repository is located right click the file and select ```Open with TextEdit```
+
+* Inside text edit locate the following block:
+
+  * ```Origin: yourRepoNameHere
+    Label: yourRepoNameHere
+    Suite: stable
+    Version: 1.0
+    Codename: macOS
+    Date: '$DATE'
+    Architectures: darwin-amd64
+    Components: main
+    Description: Your amazing description about your repository here
+    ```
+
+* Make sure to only change ```Label``` and ```Description``` to whatever you would like 
 
 ### Manually
 
@@ -116,11 +143,9 @@ NovusCLI commands:
 - [Project Serna](https://sernarepo.com/) - Main repository.
 
 ## ✍️ Authors <a name = "authors"></a>
-- [@DiegoMagdaleno](https://github.com/DiegoMagdaIeno) - Initial C++ build.
-- [@Diatrus](https://github.com/Diatrus) - Initial C++ build.
-- [@SmushyTaco](https://github.com/realSmushyTaco) - Rust rewrite.
-
-See also the list of [contributors](https://github.com/Official-polar-team/NovusCLI/graphs/contributors) who participated in this project.
+- [@DiegoMagdaleno](https://github.com/DiegoMagdaIeno) - Perl rewrite, documentation.
+- [@Diatrus](https://github.com/Diatrus) - Original Script
+- See also the list of [contributors](https://github.com/Official-polar-team/NovusCLI/graphs/contributors) who participated in this project.
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 - [PacAPT by ICY](https://github.com/icy/pacapt)
