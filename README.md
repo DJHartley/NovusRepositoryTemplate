@@ -109,43 +109,102 @@ The following steps help us to achieve that things:
     Description: Your amazing description about your repository here
     ```
 
-* Make sure to only change ```Label``` and ```Description``` to whatever you would like 
+* Make sure to only change ```Label``` and ```Description``` to whatever you would like, now we are into the last steps to get your repository working!. 
 
-### Manually
+#### Creating your GPG key.
 
-* If you haven't already go build NovusCLI, for instructions on that [clicking here](#Building).
-* Make sure where the application name is displayed on the mac's top bar that is says ```Finder```, if it doesn't click on your desktop background or the finder icon on your dock. After doing so hold the keyboard shortcut Command + Shift + G a text field asking for a file path should appear (If anything is in the field clear it) in that text field type ```/usr/local/bin/``` and click enter.
-* Drag the nvs binary you got from compiling novus in the window that just popped up.
-* Congratulations! You have successfully installed NovusCLI (nvs)! Without [APT](https://launchpad.net/ubuntu/+source/apt/) (Linux) or [MacPT](https://github.com/Official-polar-team/MacPT/) (macOS) it's useless though so be sure to install what fits for your system!
+Novus is built with security and speed in mind, so we make obligatory the use of GPG for your repository, creating one is simple and ensures security to everyone that uses your repository. You only need to follow the next steps:
 
-## 🎈 Usage <a name="usage"></a>
-NovusCLI commands:
+* Open iTerm2
 
-* ```nvs search [query]``` - Searches for a package
-* ```nvs list```  - Lists all packages in your resporitories
-* ```nvs info [package]``` - Displays information on selected package
-* ```nvs install [package]``` - Installs a package 
-* ```nvs reinstall [package]``` - Reinstalls a package
-* ```nvs remove [package]``` - Removes a package
-* ```nvs edit-sources``` - Opens the APT repo editor
-* ```nvs autoremove``` - Removes unneeded packages (orphans)
-* ```nvs update``` - Updates the repository lists
-* ```nvs upgrade``` - Upgrades all packages
-* ```nvs full-upgrade``` - Like nvs upgrade but does more
-* ```nvs version``` - Displays APT and NovusCLI versions
-* ```nvs clean``` - Clear the download cache
-* ```nvs help``` - Opens this help menu
-* ```nvs about``` - View legal information and credits
+* Inside iTerm 2 execute the following command: ```gpg --full-generate-key```.
+
+* A block is going to appear that may look like this:
+
+* ```gpg (GnuPG) 2.2.16; Copyright (C) 2019 Free Software Foundation, Inc.
+  This is free software: you are free to change and redistribute it.
+  There is NO WARRANTY, to the extent permitted by law.
+  ```
+
+  ```Please select what kind of key you want:
+     (1) RSA and RSA (default)
+     (2) DSA and Elgamal
+     (3) DSA (sign only)
+     (4) RSA (sign only)
+  Your selection?
+  ```
+
+* Please select the option ```4``` after doing this the following the next options are going to appear: 
+
+  ```
+  RSA keys may be between 1024 and 4096 bits long.
+  What keysize do you want? (2048)
+  ```
+
+* Novus repositories use the largest one so select ```4096```
+
+* After this action the following block is going to appear: 
+
+  ```
+  Please specify how long the key should be valid.
+           0 = key does not expire
+        <n>  = key expires in n days
+        <n>w = key expires in n weeks
+        <n>m = key expires in n months
+        <n>y = key expires in n years
+  Key is valid for? (0)
+  ```
+
+* Your repository key should never expire so please select ```0```
+
+* If you did evertyhing right the following prompt should appear: ```Is this correct? (y/N)``` Type ```y``` into your terminal and press enter. 
+
+* Now the following propmt should appear:
+
+  ```
+  GnuPG needs to construct a user ID to identify your key.
+  
+  Real name:
+  ```
+
+  Follow the steps, a note here is that you can leave "Comment" section empty.
+
+* Once a prompt like this appears: ```Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit?``` Type ```o``` into your terminal and press enter. 
+
+* Now is time to input your password **NEVER SHARE THIS PASSWORD WITH ANYONE, NOT YOUR PARTENER, NOT EVEN TO YOUR MOM, DON'T EVEN TRUST YOURSELF**, make sure to make this password **AS SECURE AS POSSIBLE** this is vital for users security when using Novus. 
+
+* Now your key is going to be generated, now is time to integrate your key into your repository, this is a very simple step.
+
+  * First we need to edit our ```release.pl``` file to work with this new key. To do so execute: ```gpg --list-keys``` into your terminal to get a list of keys, select the key that contains what you specificed in the section ```pub``` and copy the value.
+
+  * The value looks something like this: ```412CBF9DC51A09C6FF711C88BD84DD630FE1ED07```
+
+  * Copy the value and open ```release.pl``` again, and locate a block similar to this:
+
+    ```shell
+    gpg -abs --default-key F0F27C8758ADE7983CA32739EE6CD017B9244FB1 -o ./Release.gpg ./Release #Change your key here
+    ```
+
+Change the defualt value (F0F27C8758ADE7983CA32739EE6CD017B9244FB1) to your new key.
+
+#### Making Novus trust your key
+
+ By default Novus is built to only trust Serna, but you can serve your key to your users so packages from your repository can be used. 
+
+To make this possible Novus uses special names on the files. This is our last step and is very easy to achieve:
+
+* Open iTerm2 and type ```cd``` drag your folder there again (Where your local repo files are located.)
+* Now type the following command: ```gpg --armor --export you@example.com > repokey.asc``` Where you@example.com is your email.
+
+**Congratulations! Is a celebration! Party all day I know you been waiting** You did it! You setup a Novus repository now feel free to check our documentation of [Native Depictions](#Building) and [Packaging 101 for Novus.](#Building) To add your amazing packages!
 
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [RustLang](https://www.rust-lang.org/) - The only used programming language.
+- [Perl](https://www.rust-lang.org/) - The only used programming language.
 - [MacPT](https://github.com/DiegoMagdaIeno/MacPT) - Backend/Package manager.
 - [Project Serna](https://sernarepo.com/) - Main repository.
 
 ## ✍️ Authors <a name = "authors"></a>
 - [@DiegoMagdaleno](https://github.com/DiegoMagdaIeno) - Perl rewrite, documentation.
 - [@Diatrus](https://github.com/Diatrus) - Original Script
-- See also the list of [contributors](https://github.com/Official-polar-team/NovusCLI/graphs/contributors) who participated in this project.
+  - See also the list of [contributors](https://github.com/Official-polar-team/NovusCLI/graphs/contributors) who participated in this project
 
-## 🎉 Acknowledgements <a name = "acknowledgement"></a>
-- [PacAPT by ICY](https://github.com/icy/pacapt)
