@@ -14,19 +14,19 @@ Multi-Arch: foreign
 Homepage: https://ssl.icu-project.org/
 Description: C/C++ and Java libraries for Unicode and globalization
 
-Package: nodejs
+Package: node
 Version: 12.6.0
 Architecture: darwin-amd64
 Maintainer: Diego Magdaleno
-Installed-Size: 65628
+Installed-Size: 36872
 Depends: icu4c
 Recommends: ca-certificates
 Suggests: npm
 Filename: ./packages/node_12.6.0_darwin-amd64.deb
-Size: 10344100
-MD5sum: f633af497568301e5fb4377724de1d5c
-SHA1: b5e64c4831e558e1eaa12f97ae885af40f38c80a
-SHA256: c5db7c0d0815c8fd3edafa81693c3805e435fb1080d22e5c8e67e46def838614
+Size: 7162556
+MD5sum: dc149d996571bafce6ccbc9207ce5a22
+SHA1: 3d0b0b10740dffc66bdcc7ae03e4f3b7c2032ba1
+SHA256: 363da986628a044a4d12961f4e691716b7ac4ffa4f5b60a8f3a07ef6ecab4338
 Section: javascript
 Priority: optional
 Multi-Arch: foreign
@@ -43,4 +43,21 @@ Description: evented I/O for V8 javascript - runtime executable
  .
  System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
  HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
+
+Package: npm
+Version: 12.6.0
+Architecture: darwin-amd64
+Maintainer: Diego Magdaleno
+Installed-Size: 28800
+Depends: node
+Filename: ./packages/npm_12.6.0_darwin-amd64.deb
+Size: 3100600
+MD5sum: 8cf6bb334ea4fd5f9e0d7c2b7863cbdd
+SHA1: a01f12051046a361f87c59fd5e4e99ee5609915d
+SHA256: 851bc7c906c192e957558a175a0f6fb38903e09f000b0edde43cac565d89b039
+Section: javascript
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://www.npmjs.com/
+Description: Node package manager.
 
