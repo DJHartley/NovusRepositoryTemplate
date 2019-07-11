@@ -1,0 +1,16 @@
+Package: icu4c
+Version: 64.2
+Architecture: darwin-amd64
+Maintainer: Diego Magdaleno
+Installed-Size: 71300
+Filename: ./packages/icu4c_64.2_darwin-amd64.deb
+Size: 16360476
+MD5sum: a76c1ed23b74c5b0b5c49876f76dc656
+SHA1: ebd18d9a9037277a7c0b309bbfdcccb79fbeaec8
+SHA256: 8e9438f7de72f5b36cc882de09d2b18e1424395f4775b4eb34c62aa02cd6af6d
+Section: javascript
+Priority: optional
+Multi-Arch: foreign
+Homepage: https://ssl.icu-project.org/
+Description: C/C++ and Java libraries for Unicode and globalization
+
