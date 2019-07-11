@@ -1,29 +1,29 @@
-Origin: yourRepoNameHere 
-Label: yourRepoNameHere 
-Suite: stable 
-Version: 1.0  
-Codename: macOS 
-Date: Thu, 11 Jul 2019 02:14:40 +0000 
-Architectures: darwin-amd64 
-Components: main  
-Description: Your amazing description about your repository here
+Origin: TestRepo
+Label: TestRepo
+Suite: stable
+Version: 1.0
+Codename: macOS
+Date: Thu, 11 Jul 2019 14:01:24 +0000
+Architectures: darwin-amd64
+Components: main
+Description: Testrepo 1.0
 MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e        0 ./Packages
- 26926ce5249fb15599e683f046f7ad76       29 ./Packages.gz
- 8dc5aea5b03dff8595f096f9e368e888       32 ./Packages.xz
- b71b040626d672bf60bfce4a01ab4eb4      426 ./Release
+ d41d8cd98f00b204e9800998ecf8427e        0 Packages
+ 91e457e86fc08d4ed6ab17da83ea4f7a       29 Packages.gz
+ 8dc5aea5b03dff8595f096f9e368e888       32 Packages.xz
+ 3073e5eddfc9703176fddaa45255a1b0      355 Release
 SHA1:
- da39a3ee5e6b4b0d3255bfef95601890afd80709        0 ./Packages
- aae92a08947683091b985f7a94fc00d3dfed4d47       29 ./Packages.gz
- 9746882f4236fa1c3a8f86be2f1d9c46680c0b10       32 ./Packages.xz
- 063dec52eda30893522e048a52330c27f3f4461f      677 ./Release
+ da39a3ee5e6b4b0d3255bfef95601890afd80709        0 Packages
+ 35c4a964a8a37f490073f23a481beb69ad17185e       29 Packages.gz
+ 9746882f4236fa1c3a8f86be2f1d9c46680c0b10       32 Packages.xz
+ accd72d9824249d5267bee8f001c7d5f0a4a5d04      598 Release
 SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 ./Packages
- e2b7ef51392fcf69cd99c2a71f35a404a13daff97587e3dc832931c065ace44e       29 ./Packages.gz
- 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275       32 ./Packages.xz
- 7604e2d2d9dea142aff75bea2f03b2a43cb0ee59601e21b5b799d575b5014777     1010 ./Release
+ e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855        0 Packages
+ f99638d300c1ff02571f758fcef17eb9dc58a35e5a032189eadbbd99d1f369d8       29 Packages.gz
+ 0040f94d11d0039505328a90b2ff48968db873e9e7967307631bf40ef5679275       32 Packages.xz
+ 3ad37ca357471165770ec525ed4b43279148a9a015846716c9840af8014e6440      923 Release
 SHA512:
- cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e        0 ./Packages
- 16d9db9e2dd98778584f707eaaae0feeab1ec09d143852e4eb6c12ce02cfe80b201f587e8fb49e534545cea7e3e6e982a01052e2e0b74340e4d2333ba964c4e5       29 ./Packages.gz
- 034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527       32 ./Packages.xz
- 526ee51d48eb660712237b540d1c6281a8ac5f0855a0aefa4c46effa5f5b5b991209d39e36b159a8979f6a72ede2122868c2ded3fe2203b139a76426f22fa762     1559 ./Release
+ cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e        0 Packages
+ 846c8167d1913479867979d4ef9cdc0ba25db9378f3e55b8df60fb44c3c657d3e9c42b09ad03c54834203a6e47b0bda888728c10a93b8cc49872345624f703d1       29 Packages.gz
+ 034b32f1138322638c7a5b7949a3b184c6a4cdfd003360a496c08c56c2cc645c94fbe9cdf9d84c963af6dda6c442717cd61d7e1cecf7024bd463f6f5196c5527       32 Packages.xz
+ 2f01f96076407afcd526272df47f6a24607ce4fbe6184fef531d73c23d3a10744c1b2b727aaecec2e3540db89fa3af343622d48a6c18832cf54039b7ae5047af     1464 Release
