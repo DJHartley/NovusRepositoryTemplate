@@ -14,3 +14,33 @@ Multi-Arch: foreign
 Homepage: https://ssl.icu-project.org/
 Description: C/C++ and Java libraries for Unicode and globalization
 
+Package: nodejs
+Version: 12.6.0
+Architecture: darwin-amd64
+Maintainer: Diego Magdaleno
+Installed-Size: 65628
+Depends: icu4c
+Recommends: ca-certificates
+Suggests: npm
+Filename: ./packages/node_12.6.0_darwin-amd64.deb
+Size: 10344100
+MD5sum: f633af497568301e5fb4377724de1d5c
+SHA1: b5e64c4831e558e1eaa12f97ae885af40f38c80a
+SHA256: c5db7c0d0815c8fd3edafa81693c3805e435fb1080d22e5c8e67e46def838614
+Section: javascript
+Priority: optional
+Multi-Arch: foreign
+Homepage: http://nodejs.org/
+Description: evented I/O for V8 javascript - runtime executable
+ Node.js is a platform built on Chrome's JavaScript runtime for easily
+ building fast, scalable network applications. Node.js uses an
+ event-driven, non-blocking I/O model that makes it lightweight and
+ efficient, perfect for data-intensive real-time applications that run
+ across distributed devices.
+ .
+ Node.js is bundled with several useful libraries to handle server
+ tasks:
+ .
+ System, Events, Standard I/O, Modules, Timers, Child Processes, POSIX,
+ HTTP, Multipart Parsing, TCP, DNS, Assert, Path, URL, Query Strings.
+
