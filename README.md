@@ -73,7 +73,7 @@ The following steps help us to achieve that things:
 
 * To get your own icon create an image of 512 x 512 it can be whatever you want, we don't have any guidelines for icons. Make sure to name it ```RepoIcon.png```.
 
-* In order to make release file (Our own name) we need to configure ```update.pl``` 
+* In order to make release file (Our own name) we need to configure ```update.sh``` 
 
 * To achieve this go into the folder your repository is located right click the file and select ```Open with TextEdit```
 
