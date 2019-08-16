@@ -4,31 +4,12 @@
 </p>
 
 <h3 align="center">Novus Repository Template.</h3>
-<div align="center">
-
-  ![Forks](https://img.shields.io/github/issues/Official-polar-team/NovusRepositoryTemplate.svg) 
-  ![GitHub Issues](https://img.shields.io/github/forks/Official-polar-team/NovusRepositoryTemplate.svg)
-  ![GitHub Stars](https://img.shields.io/github/stars/Official-polar-team/NovusRepositoryTemplate.svg)
-  ![License](https://img.shields.io/github/license/Official-polar-team/NovusRepositoryTemplate.svg)
-
-</div>
-
 ---
 
 <p align="center"> Easily create a Novus repository and deploy in minutes!
     <br> 
 </p>
 
-## 📝 Table of Contents
-- [About](#about)
-- [Getting Started](#getting_started)
-- [How to Build](#building)
-- [How to Install](#installing)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
 
 ## 🧐 About <a name = "about"></a>
 Novus repository template is a handmade script and repo template that helps developers or hobbist, create a place to freely destribute their packages, doesnt matter if it is a Theme, Addon, Application or something else, this makes distributing under Novus easy!.
