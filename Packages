@@ -1,0 +1,19 @@
+Package: fish
+Version: 3.0.2-1
+Architecture: darwin-amd64
+Maintainer: Diego Magdaleno
+Installed-Size: 14832
+Depends: libpcre2, ncurses
+Filename: ./packages/fish_3.0.2_darwin-amd-64.deb
+Size: 1781068
+MD5sum: 59332253887b1eabe8517e668dd7b652
+SHA1: 75b6f8e78aada6ab8ebeb25ac914b5ae70bd2e6e
+SHA256: 1703e4b8a00584a1731c62fed045575c0bdaa35e327eb01e43136bbe40586373
+Section: shells
+Priority: optional
+Homepage: http://fishshell.com/
+Description: friendly interactive shell
+ Fish is a shell geared towards interactive use.  Its features are focused on
+ user friendliness and discoverability.  The language syntax is simple but
+ incompatible with other shell languages.
+
