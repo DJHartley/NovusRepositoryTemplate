@@ -20,7 +20,7 @@ Getting started for creating your own repository is easy, just follow the instru
 ### Prerequisites
 In order to start creating you own Novus repository is recommened that you have both [MacPT](https://github.com/Official-polar-team/MacPT) and [NovusCLI](https://github.com/Official-polar-team/NovusCLI) installed. 
 
-Is also recommended to have basic Linux utilities installed on your Mac via [Project Serna](https://sernarepo.com/) to install them open your terminal ```Applications ---> Utilities ---> Terminal ``` and type ```nvs install gpg xz bzip2 perl dpkg-dev```  after this click enter, you are going to be prompted to type your password, after this everything should be done.
+Is also recommended to have basic Linux utilities installed on your Mac via [Project Serna](https://sernarepo.com/) to install them open your terminal ```Applications ---> Utilities ---> Terminal ``` and type ```nvs install libgpg-error xz-utils bzip2 perl dpkg-dev```  after this click enter, you are going to be prompted to type your password, after this everything should be done.
 
 ### 🔽 Downlaoding
 
