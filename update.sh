@@ -15,68 +15,17 @@
 
 #!/bin/bash
 script_full_path=$(dirname "$0")
-DATE=$(date -R -u)
 cd $script_full_path
 
-rm Packages Packages.xz Packages.gz Release.gpg Release
+rm Packages Packages.xz Packages.gz Packages.zst Release.gpg Release
 
-dpkg-scanpackages -m . > Packages
-gzip -c9 -k Packages > Packages.gz
-xz -c9 -k Packages > Packages.xz
+apt-ftparchive packages ./debs > Packages
+gzip -c9 Packages > Packages.gz
+xz -c9 Packages > Packages.xz
+zstd -c19 Packages > Packages.zst
 
-cd $script_full_path
+apt-ftparchive release -c ./configs/repo.conf . > Release
 
-OUTPUT="Release"
-FILES=(
-  Packages
-  Packages.gz
-  Packages.xz
-  Release
-)
-
-RETURN=false
-
-
-function generateHash() {
-    local CHECKSUM=$($1 $2 | awk '{print $1}')
-    local SIZE=$(wc -c < $2)
-    RETURN="${CHECKSUM} ${SIZE} $2"
-}
-
-echo 'Origin: TestRepo
-Label: TestRepo
-Suite: stable
-Version: 1.0
-Codename: macOS
-Date: '$DATE'
-Architectures: darwin-amd64
-Components: main
-Description: Testrepo 1.0' >> ${OUTPUT}
-
-echo "MD5Sum:" >> ${OUTPUT}
-for i in "${FILES[@]}"; do
-    generateHash md5sum ${i}
-    echo " ${RETURN}" >> ${OUTPUT}
-done
-
-echo "SHA1:" >> ${OUTPUT}
-for i in "${FILES[@]}"; do
-    generateHash sha1sum ${i}
-    echo " ${RETURN}" >> ${OUTPUT}
-done
-
-echo "SHA256:" >> ${OUTPUT}
-for i in "${FILES[@]}"; do
-    generateHash sha256sum ${i}
-    echo " ${RETURN}" >> ${OUTPUT}
-done
-
-echo "SHA512:" >> ${OUTPUT}
-for i in "${FILES[@]}"; do
-generateHash sha512sum ${i}
-echo " ${RETURN}" >> ${OUTPUT}
-done
-
-gpg -abs --default-key F0F27C8758ADE7983CA32739EE6CD017B9244FB1 -o ./Release.gpg ./Release
+gpg -abs --default-key A62E24F587D7497DA677036D2948E440D73080B4 -o Release.gpg Release
 
 echo "Done updating!"
